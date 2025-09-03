@@ -16,7 +16,7 @@ class PineappleGossipBot(Node):
 
     def timer_callback(self):
         msg = String()
-        msg.data = f'Tim Apple spotted doing pineapple dance in aisle {self.i}!'
+        msg.data = f'Gossip found in aisel {self.i}!'
         self.publisher_.publish(msg)
         self.get_logger().info(f'Publishing: "{msg.data}"')
         self.i += 1
