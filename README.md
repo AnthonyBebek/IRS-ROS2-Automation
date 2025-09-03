@@ -55,6 +55,24 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+This software was developed to complete labertory work for the Industrial Robotic and Systems (IRS) unit at UC, as of 3rd quarter 2025, https://github.com/CollaborativeRoboticsLab/industrial-robots-and-systems-world.
+
+These ROS2 packages were written for Humble and are made to run on a docker container connected to the warehouse containers hosted by the IRS software.
+
+<img src="images/Warehouse.png" alt="Warehouse" width="500"/>
+<img src="images/PLCs.png" alt="PLCs" width="500"/>
+
+### pa_warehouse_status
+
+This package reads from the /hmi/unified_status topic and publishes to the /tatus_updates topic. Which essentially reads the infomation related to the conveyor belt (Box counts and location) and puts it on the ROS2 HMI GUI.
+
+<img src="images/WarehouseStatus.png" alt="PLCs" width="500"/>
+
+### Hand_solo_virtual_nav
+
+This package generates a map of the warehouse from a Lidar scanner on the bot, it runs a simple SLAM package in ROS2 to manage both localisation and mapping
+
+<img src="hand_solo_virtual_nav/maps/pa_warehouse_map_01.png" alt="PLCs" width="500"/>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
