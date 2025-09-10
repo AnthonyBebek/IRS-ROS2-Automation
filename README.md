@@ -156,6 +156,28 @@ sudo docker run hello-world
 
 <!-- USAGE -->
 ## Usage
+Ensure you have git cloned the repo running on the host machine https://github.com/CollaborativeRoboticsLab/industrial-robots-and-systems-world.
+
+Inside the repo folder, run the commands
+```
+sudo docker compose pull
+sudo xhost +local:root
+sudo docker compose up
+```
+I would recommend you write a shell script with these lines to save time in the future.
+
+To run the OpenPLC engine run
+```
+sudo docker compose pull
+sudo xhost +local:root
+sudo docker compose -f compose-editor.yaml up
+```
+
+Then open a vscode window and attach it to the running container via the remote explorer inside /root
+
+Create a folder called ros2_ws and git clone this repo inside if not already created.
+
+inside the vscode terminal run ```bash ~/ros2_ws/src/setup.sh``` then follow the instructions in the setup script
 
 <!-- CONTRIBUTING -->
 ## Contributing

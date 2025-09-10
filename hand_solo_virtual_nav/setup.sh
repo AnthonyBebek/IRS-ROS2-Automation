@@ -3,7 +3,7 @@ set -e # exit on first error
 
 WORKSPACE=~/ros2_ws
 PKG_NAME=hand_solo_virtual_nav
-LAUNCH_FILE=mapping_launch.py
+LAUNCH_FILE=nav_launch.py
 
 echo ">>> Building $PKG_NAME inside $WORKSPACE"
 cd $WORKSPACE
