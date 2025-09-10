@@ -2,8 +2,6 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 import json
-from datetime import datetime
-import pytz
 
 class PLCSender(Node):
     def __init__(self):
@@ -18,20 +16,13 @@ class PLCSender(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
 
-    def convTime(self, time) -> str:
-        utc_tz = pytz.utc
-        aest_tz = pytz.timezone('Australia/Sydney')
-        now_utc = datetime.now(utc_tz)
-        now_aest = now_utc.astimezone(aest_tz)
-        return (now_aest - now_utc).total_seconds()
-
     def listener_callback(self, msg):
         try:
             self.get_logger().info(f' I heard: {msg.data}')
             self.print = String()
             # Convert message to json datatype for phrasing
             jsonData = json.loads(msg.data)
-            self.timestamp = str(self.convTime(jsonData['stamp']['sec']))
+            self.timestamp = str(jsonData['stamp']['sec'])
             self.boxWeight = str(jsonData['box']['weight_raw'])
             self.boxLocation = str(jsonData['box']['location'])
             self.countBig = str(jsonData['counts']['big'])
