@@ -189,6 +189,14 @@ def generate_launch_description():
         output='screen'
     )    
 
+    hs_waypoint_follower = Node(
+        package='pineapple_box_sorter',
+        executable='hs_waypoint_follower',
+        name='hs_waypoint_follower',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}],
+    )
+
     return LaunchDescription([
         # Launch arguments
         declare_use_sim_time,
@@ -209,6 +217,9 @@ def generate_launch_description():
         waypoint_follower,
         velocity_smoother,
         lifecycle_manager_navigation,
+
+        # hs_waypoint_follower node
+        hs_waypoint_follower,
         
         # Visualization
         rviz,

@@ -14,7 +14,7 @@
   <h3 align="center">IRS-ROS2-Automation</h3>
 
   <p align="center">
-    Description of repo
+    Industrial Robotics and Systems warehouse automation through ROS2 Humble.
     <br />
     <a href="https://github.com/AnthonyBebek/IRS-ROS2-Automation"><strong>Explore the docs »</strong></a>
     <br />
@@ -72,10 +72,13 @@ This package reads from the /hmi/unified_status topic and publishes to the /tatu
 
 This package generates a map of the warehouse from a Lidar scanner on the bot, it runs a simple SLAM package in ROS2 to manage both localisation and mapping
 
-<img src="hand_solo_virtual_nav/maps/pa_warehouse_map_01.png" alt="PLCs" width="500"/>
+<img src="pineapple_box_sorter/map/pa_warehouse_map_01.png" alt="PLCs" width="500"/>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### pineapple_box_sorter
+
+This package takes control of the robot in the warehouse, it picks up the boxes from a conveyor then moves and drops off the package to a drop-off location at the back of the warehouse.
 
 
 ### Built With
@@ -177,7 +180,9 @@ Then open a vscode window and attach it to the running container via the remote 
 
 Create a folder called ros2_ws and git clone this repo inside if not already created.
 
-inside the vscode terminal run ```bash ~/ros2_ws/src/setup.sh``` then follow the instructions in the setup script
+inside the vscode terminal run ```bash ~/ros2_ws/src/setup.sh``` then follow the instructions in the setup script.
+
+You'll be given the option to install dependacies, (Required on first install) then given the option to run each package.
 
 <!-- CONTRIBUTING -->
 ## Contributing
