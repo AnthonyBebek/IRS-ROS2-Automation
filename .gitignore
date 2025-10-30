@@ -2,6 +2,7 @@
 build/
 install/
 log/
+test/
 
 # Python artifacts
 __pycache__/
@@ -19,3 +20,4 @@ __pycache__/
 # OS files
 .DS_Store
 *.swp
+
